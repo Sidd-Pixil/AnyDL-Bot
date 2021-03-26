@@ -51,7 +51,7 @@ async def help(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>AnyDL Bot Help!
+               text="""<b>Ichigo robot Bot Help!
 
 Just send me any link of any yt video and download it in audio or video format.
 
@@ -77,13 +77,13 @@ async def about(client, message):
                chat_id=message.chat.id,
                text="""<b>About Ichigo robot!</b>
 
-<b>♞ Developer:</b> <a href="https://t.me/Clutch_g0d">clutch_g0d</a>
+<b>🔰:</b> <a href="https://t.me/Clutch_g0d">clutch_g0d developer of the bot.</a>
 
-<b>♞ Support:</b> <a href="https://t.me/zero2botsupport">Zero 2 bot support </a>
+<b>🔰:</b> <a href="https://t.me/zero2botsupport">if bot is not working plz tell us in our support chat </a>
 
-<b>♞ 🔰More about bot and developer :</b> <a href="https://t.me/enchanted_vibes/32">Pyrogram</a>
+<b>🔰 :</b> <a href="https://t.me/enchanted_vibes/32">More about bot and developer</a>
 
-<b>~ @clutch_g0d</b>""",
+<b>~@clutch_g0d</b>""",
      reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -103,17 +103,17 @@ async def about(client, message):
                    & filters.regex(YTDL_REGEX))
 async def ytdl_with_button(_, message: Message):
     await message.reply_text(
-        "**Choose download type 🤗**",
+        "**Choose your download type 🤗**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Audio 🎵",
-                        callback_data="ytdl_audio"
-                    ),
-                    InlineKeyboardButton(
                         "Video 🎬",
                         callback_data="ytdl_video"
+                    ),
+                    InlineKeyboardButton(
+                        "Audio 🎵",
+                        callback_data="ytdl_audio"
                     )
                 ]
             ]
@@ -136,7 +136,7 @@ async def callback_query_ytdl_audio(_, callback_query):
             await message.reply_chat_action("typing")
             info_dict = ydl.extract_info(url, download=False)
             # download
-            await callback_query.edit_message_text("**Downloading audio...**")
+            await callback_query.edit_message_text("**Just a sec...**")
             ydl.process_info(info_dict)
             # upload
             audio_file = ydl.prepare_filename(info_dict)
@@ -166,7 +166,7 @@ async def send_audio(message: Message, info_dict, audio_file):
         get_file_extension_from_url(thumbnail_url)
     # info (s2tw)
     webpage_url = info_dict['webpage_url']
-    title = '@Infinity_BOTs - '+s2tw(info_dict['title'])
+    title = '@Ichigo_015_robot - '+s2tw(info_dict['title'])
     caption = f"<b><a href=\"{webpage_url}\">{title}</a></b>"
     duration = int(float(info_dict['duration']))
     performer = s2tw(info_dict['uploader'])
@@ -192,7 +192,7 @@ async def callback_query_ytdl_video(_, callback_query):
             await message.reply_chat_action("typing")
             info_dict = ydl.extract_info(url, download=False)
             # download
-            await callback_query.edit_message_text("**Downloading video...**")
+            await callback_query.edit_message_text("**Just a sec...**")
             ydl.process_info(info_dict)
             # upload
             video_file = ydl.prepare_filename(info_dict)
@@ -217,7 +217,7 @@ async def send_video(message: Message, info_dict, video_file):
         get_file_extension_from_url(thumbnail_url)
     # info (s2tw)
     webpage_url = info_dict['webpage_url']
-    title = '@Infinity_BOTs - '+s2tw(info_dict['title'])
+    title = '@Ichigo_015_robot - '+s2tw(info_dict['title'])
     caption = f"<b><a href=\"{webpage_url}\">{title}</a></b>"
     duration = int(float(info_dict['duration']))
     width, height = get_resolution(info_dict)
@@ -274,8 +274,8 @@ async def button(bot, update):
 
 print(
     """
-Bot Started!
-Join @Infinity_BOTs
+Bot is up now 
+Join @zero2botsupport
 """
 )
 
