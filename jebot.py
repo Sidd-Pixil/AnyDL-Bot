@@ -27,20 +27,20 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, I'm AnyDL Bot
+               text="""<b>Hey There, I'm Ichigo robot
 
-I can download video or audio from Youtube. Made by @ImJanindu 🇱🇰
+I can download video or audio from Youtube. Made by @Clutch_g0d
 
-Hit help button to find out more about how to use me</b>""",   
+\Wanna know how to use me ? do /help</b>""",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
                                             "Help", callback_data="help"),
                                         InlineKeyboardButton(
-                                            "Channel", url="https://t.me/Infinity_BOTs")
+                                            "Support chat", url="https://t.me/zero2botsupport")
                                     ],[
                                       InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                            "Creator", url="https://t.me/enchanted_vibes")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -53,10 +53,10 @@ async def help(client, message):
                chat_id=message.chat.id,
                text="""<b>AnyDL Bot Help!
 
-Just send a Youtube url to download it in video or audio format!
+Just send me any link of any yt video and download it in audio or video format.
 
-~ @Infinity_BOTs</b>""",
-        reply_markup=InlineKeyboardMarkup(
+</b>""",
+       reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
                                             "Back", callback_data="start"),
@@ -64,7 +64,7 @@ Just send a Youtube url to download it in video or audio format!
                                             "About", callback_data="about"),
                                   ],[
                                         InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                            "Support chat", url="https://t.me/zero2botsupport")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -75,21 +75,20 @@ async def about(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>About AnyDL Bot!</b>
+               text="""<b>About Ichigo robot!</b>
 
-<b>♞ Developer:</b> <a href="https://t.me/ImJanindu">Janindu 🇱🇰</a>
+<b>♞ Developer:</b> <a href="https://t.me/Clutch_g0d">clutch_g0d</a>
 
-<b>♞ Support:</b> <a href="https://t.me/InfinityBOTs_Support">Infinity BOTs Support</a>
+<b>♞ Support:</b> <a href="https://t.me/zero2botsupport">Zero 2 bot support </a>
 
-<b>♞ Library:</b> <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a>
+<b>♞ 🔰More about bot and developer :</b> <a href="https://t.me/enchanted_vibes/32">Pyrogram</a>
 
-<b>~ @Infinity_BOTs</b>""",
+<b>~ @clutch_g0d</b>""",
      reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
                                             "Back", callback_data="help"),
-                                        InlineKeyboardButton(
-                                            "Source Code", url="https://github.com/ImJanindu/AnyDL-Bot")
+                                      
                                     ]]
                             ),        
             disable_web_page_preview=True,        
